@@ -28,10 +28,10 @@
         <!--</property>-->
     <!--</bean>   -->
 
-	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/view/" />
         <property name="suffix" value=".jsp" />
-    </bean>
+    </bean>-->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass">

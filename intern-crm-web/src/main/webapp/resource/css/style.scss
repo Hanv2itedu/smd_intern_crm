@@ -1,0 +1,48 @@
+$header-main-color: #003d61;
+$header-extra-color: #009966;
+// $hover-color:#009966;
+$menu-main-color: #0e5464;
+$menu-extra-color:#136588;
+$shadow-color: #328d92;
+$border-color: #103642;
+.bg-main {
+    background: linear-gradient(90deg, $header-main-color, $header-extra-color);
+}
+
+
+
+.header {
+    box-shadow: 0px 4px 5px 2px $shadow-color;
+}
+
+.sidebar {
+    min-height: 800px;
+    box-shadow: 0px 10px 10px 2px $shadow-color;
+
+    li{
+
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+        //    color: $hover-color !important;
+           font-weight: 500;
+        }
+    }
+    
+    .active {
+        background: $menu-extra-color;
+        border-left: $border-color 7px solid;
+    }
+   
+}
+
+.bg-menu {
+    background-color: $menu-main-color;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    
+}

@@ -15,9 +15,9 @@
         <put-attribute name="title" value="Home Page" />
         <put-attribute name="body" value="/view/home.jsp" />
     </definition>
-    <definition name="login" extends="definition">
-        <put-attribute name="title" value="Home Page" />
-        <put-attribute name="body" value="/view/home.jsp" />
+    <definition name="login" template="/view/login.jsp" >
+
+
     </definition>
 
 </tiles-definitions>

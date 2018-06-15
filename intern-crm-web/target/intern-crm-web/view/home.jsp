@@ -8,6 +8,6 @@
 </head>
 <body>
 	Hello world!
-	<a href="/demo-web/login">Login</a>
+
 </body>
 </html>

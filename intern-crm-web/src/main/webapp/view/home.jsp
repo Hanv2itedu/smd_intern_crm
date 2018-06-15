@@ -8,6 +8,6 @@
 </head>
 <body>
 	Hello world!
-	<a href="/intern-crm-web/login">Login</a>
+
 </body>
 </html>

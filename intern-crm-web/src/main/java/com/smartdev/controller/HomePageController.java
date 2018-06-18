@@ -12,8 +12,14 @@ public class HomePageController {
 		return "login";
 	}
 	@RequestMapping(value="/home", method = RequestMethod.GET)
-	public String home(){
+	public String home()
+	{
 		return "home";
+	}
+
+	@RequestMapping(value="/homeSeller", method = RequestMethod.GET)
+	public String homeSeller(){
+		return "homeSeller";
 	}
 
 }

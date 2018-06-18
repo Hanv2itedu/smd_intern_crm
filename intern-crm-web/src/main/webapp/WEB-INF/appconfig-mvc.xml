@@ -32,6 +32,7 @@
         <property name="prefix" value="/view/" />
         <property name="suffix" value=".jsp" />
     </bean>-->
+    <!-- mapping các template tiles -->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass">
@@ -43,7 +44,7 @@
     <bean id="tilesConfigurer"
           class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
-            <list>
+            <list>  <!-- khai báo các file định nghĩa layout -->
                 <value>/WEB-INF/title3.xml</value>
             </list>
         </property>

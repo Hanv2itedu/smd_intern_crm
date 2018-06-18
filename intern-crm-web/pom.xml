@@ -103,7 +103,7 @@
             <version>3.0.5</version>
         </dependency>
     </dependencies>
-    <build>
+    <build><!--chạy maven sẽ vao build-->
         <finalName>intern-crm-web</finalName>
         <plugins>
             <plugin>

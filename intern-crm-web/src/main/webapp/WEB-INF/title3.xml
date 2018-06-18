@@ -12,14 +12,11 @@
     </definition>
 
     <definition name="home" extends="definition">
-
         <put-attribute name="body" value="/view/home.jsp" />
     </definition>
-    <definition name="login" template="/view/template/layout/template.jsp">
-        <put-attribute name="header" value="" />
-        <put-attribute name="menu" value="" />
-        <put-attribute name="footer" value="" />
-        <put-attribute name="body" value="/view/login.jsp" />
+    <definition name="login" template="/view/login.jsp">
     </definition>
-
+    <definition name="addcustomer" extends="definition">
+        <put-attribute name="body" value="/view/addcustomer.jsp"/>
+    </definition>
 </tiles-definitions>

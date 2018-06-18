@@ -14,11 +14,18 @@
 
 	
     <!-- It register the beans in context and scan the annotations inside beans and activate them -->
+
+
+    <!--để service có thể autowrite repostori lên. tự động nó lấy hết các package có đuôi là com.smartdev-->
     <context:component-scan base-package="com.smartdev.*" />
 
     <!-- This allow for dispatching requests to Controllers -->
+
+    <!--khai báo để nó có thể hiểu hết các anotation-->
     <mvc:annotation-driven />
     <!-- This inject css js into project  -->
+
+    <!--để dọc được các file css trong resouce-->
      <mvc:resources mapping="/resource/**" location="/resource/" />
      <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
         <!--<property name="basenames">-->
@@ -32,6 +39,8 @@
         <!--<property name="prefix" value="/view/" />-->
         <!--<property name="suffix" value=".jsp" />-->
     <!--</bean>-->
+
+    <!--nhúng tile3 vào-->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass">

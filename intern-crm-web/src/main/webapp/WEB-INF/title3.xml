@@ -21,5 +21,12 @@
         <put-attribute name="footer" value="" />
         <put-attribute name="body" value="/view/login.jsp" />
     </definition>
+    <definition name="list-custom-manage" extends="definition">
+        <put-attribute name="body" value="/view/list-custom-manage.jsp"/>
+    </definition>
+
+    <definition name="list-custom-seller" extends="definition">
+        <put-attribute name="body" value="/view/list-custom-seller.jsp"/>
+    </definition>
 
 </tiles-definitions>

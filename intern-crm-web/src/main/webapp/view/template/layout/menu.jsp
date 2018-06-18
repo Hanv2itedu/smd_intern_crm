@@ -12,7 +12,7 @@
     <a href="#" class="text-white lead ">Seller Manager</a>
     </li>
     <li class="p-3">
-    <a href="#" class="text-white lead">Customer Manager</a>
+    <a href="/list-custom-manage" class="text-white lead">Customer Manager</a>
     </li>
     <li class="p-3">
     <a href="#" class="text-white lead ">Block list</a>

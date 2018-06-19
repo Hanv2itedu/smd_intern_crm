@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd"
+	logicalFilePath="db.changelog.dbmaster-1.0.xml">
+	
+	<changeSet id="000" author="HaNguyen">
+		<createTable tableName="user">
+			<column name="user_name" type="VARCHAR(20)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="pass_word" type="VARCHAR(20)"></column>
+			<column name="role" type="INT(1)"></column>
+		</createTable>
+		<createTable tableName="seller_detail">
+			<column name="user_name" type="VARCHAR(45)">
+				<constraints nullable="false"/>
+			</column> 
+			<column name="name" type="VARCHAR(45)"></column>
+			<column name="age" type="INT(2)"></column>
+			<column name="mail" type="VARCHAR(50)"></column>
+			<column name="phone" type="Int(11)"></column>
+			<column name="avatar" type="VARCHAR(200)"></column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="001" author="HaNguyen">
+		<createTable tableName="customer">
+			<column name="id" type="INT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="name" type="VARCHAR(20)"></column>
+			<column name="age" type="INT(2)"></column>
+			<column name="phone" type="INT(11)"></column>
+			<column name="mail" type="VARCHAR(50)"></column>
+			<column name="facebook" type="VARCHAR(50)"></column>
+			<column name="status_id" type="Int(1)"></column>
+			<column name="product_type" type="Int(1)"></column>
+			<column name="company" type="VARCHAR(20)"></column>
+		</createTable>
+		<createTable tableName="status">
+			<column name="id" type="int(1)" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(20)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<createTable tableName="history_advisory">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="customer_id" type="int"></column>
+			<column name="status_id" type="int(1)"></column>
+			<column name="date" type="DATETIME"></column>
+			<column name="comment" type="Varchar(450)"></column>
+		</createTable>
+	</changeSet>	
+	<changeSet id="003" author="HaNguyen">
+		<addColumn tableName="customer">
+			<column name="seller" type="varchar(45)"></column>
+		</addColumn>
+		<addForeignKeyConstraint constraintName="fk_sellerDetail_user" referencedTableName="user" 
+								baseColumnNames="user_name" baseTableName="seller_detail" 
+								referencedColumnNames="user_name"/>
+		<addForeignKeyConstraint constraintName="fk_customer_user" referencedTableName="user" 
+								baseColumnNames="seller" baseTableName="customer" referencedColumnNames="user_name"/>
+		<addForeignKeyConstraint constraintName="fk_customer_status" referencedTableName="status"
+								 baseColumnNames="status_id" baseTableName="customer" referencedColumnNames="id"/>
+		<addForeignKeyConstraint constraintName="fk_history_customer" referencedTableName="customer"
+								 baseColumnNames="customer_id" baseTableName="history_advisory" referencedColumnNames="id"/>
+		<addForeignKeyConstraint constraintName="fk_history_status" referencedTableName="status"
+								 baseColumnNames="status_id" baseTableName="history_advisory" referencedColumnNames="id"/>
+	</changeSet>
+
+</databaseChangeLog>

@@ -12,4 +12,5 @@
 ">
 	
 	<import resource="appconfig-mvc.xml" />
+	<import resource="appconfig-data.xml"/>
 </beans>

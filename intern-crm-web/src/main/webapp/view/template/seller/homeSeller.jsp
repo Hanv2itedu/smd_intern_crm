@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+</div>
 <div class="input-group mt-5" style="width: 30%">
     <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Status</label>

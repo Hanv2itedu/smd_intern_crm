@@ -2,6 +2,7 @@ package com.smartdev.user.entity;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class User {
@@ -56,24 +57,17 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
-
-        if (userName != null ? !userName.equals(user.userName) : user.userName != null) return false;
-        if (passWord != null ? !passWord.equals(user.passWord) : user.passWord != null) return false;
-        if (role != null ? !role.equals(user.role) : user.role != null) return false;
-        if (isDelete != null ? !isDelete.equals(user.isDelete) : user.isDelete != null) return false;
-
-        return true;
+        return Objects.equals(userName, user.userName) &&
+                Objects.equals(passWord, user.passWord) &&
+                Objects.equals(role, user.role) &&
+                Objects.equals(isDelete, user.isDelete);
     }
 
     @Override
     public int hashCode() {
-        int result = userName != null ? userName.hashCode() : 0;
-        result = 31 * result + (passWord != null ? passWord.hashCode() : 0);
-        result = 31 * result + (role != null ? role.hashCode() : 0);
-        result = 31 * result + (isDelete != null ? isDelete.hashCode() : 0);
-        return result;
+
+        return Objects.hash(userName, passWord, role, isDelete);
     }
 
     @OneToMany(mappedBy = "userBySeller")

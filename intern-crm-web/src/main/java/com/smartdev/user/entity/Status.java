@@ -2,21 +2,22 @@ package com.smartdev.user.entity;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class Status {
-    private Integer id;
+    private int id;
     private String name;
     private Collection<Customer> customersById;
     private Collection<HistoryAdvisory> historyAdvisoriesById;
 
     @Id
     @Column(name = "id")
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,20 +35,15 @@ public class Status {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Status status = (Status) o;
-
-        if (id != null ? !id.equals(status.id) : status.id != null) return false;
-        if (name != null ? !name.equals(status.name) : status.name != null) return false;
-
-        return true;
+        return id == status.id &&
+                Objects.equals(name, status.name);
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, name);
     }
 
     @OneToMany(mappedBy = "statusByStatusId")

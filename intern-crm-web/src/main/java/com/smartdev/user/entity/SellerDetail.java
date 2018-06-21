@@ -1,6 +1,7 @@
 package com.smartdev.user.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "seller_detail", schema = "crm_db", catalog = "")
@@ -77,28 +78,19 @@ public class SellerDetail {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         SellerDetail that = (SellerDetail) o;
-
-        if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (age != null ? !age.equals(that.age) : that.age != null) return false;
-        if (mail != null ? !mail.equals(that.mail) : that.mail != null) return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (avatar != null ? !avatar.equals(that.avatar) : that.avatar != null) return false;
-
-        return true;
+        return Objects.equals(userName, that.userName) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(age, that.age) &&
+                Objects.equals(mail, that.mail) &&
+                Objects.equals(phone, that.phone) &&
+                Objects.equals(avatar, that.avatar);
     }
 
     @Override
     public int hashCode() {
-        int result = userName != null ? userName.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (age != null ? age.hashCode() : 0);
-        result = 31 * result + (mail != null ? mail.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (avatar != null ? avatar.hashCode() : 0);
-        return result;
+
+        return Objects.hash(userName, name, age, mail, phone, avatar);
     }
 
     @OneToOne

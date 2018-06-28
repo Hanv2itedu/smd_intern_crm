@@ -1,12 +1,12 @@
 package com.smartdev.crm.service;
 
-import com.smartdev.crm.service.CustomerService;
 import com.smartdev.user.dao.repository.CustomerRepository;
 import com.smartdev.user.entity.Customer;
+import com.smartdev.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import java.util.List;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -28,4 +28,12 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer afindOneid(Integer id){
         return customerRepository.findOne(id);
     }
+
+    @Override
+    public List<Customer> findByuserBySeller(User user) {
+        return customerRepository.findByUserBySeller(user);
+    }
+
+
 }
+

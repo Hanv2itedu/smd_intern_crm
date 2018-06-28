@@ -53,4 +53,9 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         sellerDetailRepository.save(sellerDetail);
     }
+
+    @Override
+    public User findOneUser(String username) {
+        return userRepository.findOne(username);
+    }
 }

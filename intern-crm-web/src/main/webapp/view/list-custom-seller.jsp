@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
     <div class="title">
@@ -49,10 +50,11 @@
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="item" items="${customers}">
             <tr>
-                <td><a href="/seller/advisory/2">con chó</a></td>
-                <td>Gia Lai</td>
-                <td>123456</td>
+                <td><a href="/seller/advisory/${item.id}">${item.name}</a></td>
+                <td>${item.company}</td>
+                <td>${item.phone}</td>
                 <td>
                    <button class="btn btn-info btn btn-primary" data-toggle="modal" data-target="#exampleModal" value="">EDIT</button>
                 </td>
@@ -60,18 +62,7 @@
                     <button class="btn btn-danger">DELETE</button>
                 </td>
             </tr>
-            <tr>
-                <td>Marri</td>
-                <td>Gia Lai</td>
-                <td>123456</td>
-
-                <td>
-                    <button class="btn btn-info btn btn-primary" data-toggle="modal" data-target="#exampleModal" value="">EDIT</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">DELETE</button>
-                </td>
-            </tr>
+            </c:forEach>
             </tbody>
         </table>
 
